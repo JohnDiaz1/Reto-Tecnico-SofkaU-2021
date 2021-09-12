@@ -21,6 +21,7 @@ public class UsuarioDAO {
     private PreparedStatement statement;
     private ResultSet result;
     
+    //Comprobar si existe un usuario
     public void comprobarExistencia(String usuario, int acomulado) {
         
         try {
@@ -33,8 +34,10 @@ public class UsuarioDAO {
                 result = statement.executeQuery();
                 conn = null;
                 if (result.next()) {
+                    //Si existe actualiza los datos de este para no tener usuarios duplicados
                     actualizarDatos(usuario, acomulado);
                 }else{
+                    //Si no existe lo agrega
                     agregarDatos(usuario, acomulado);
                 }
 

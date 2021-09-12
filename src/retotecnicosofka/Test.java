@@ -106,6 +106,7 @@ public class Test {
 
     public void iniciarTest() {
         while (preguntaActual != 6) {
+
             PreguntaDAO pregunta = new PreguntaDAO();
             respuestas = new RespuestaDAO();
             usuario = new UsuarioDAO();
@@ -150,6 +151,7 @@ public class Test {
 
     public void pressEnterContinue() {
         try {
+            //Pausa la consola hasta que se presione ENTER
             System.in.read();
 
         } catch (IOException ex) {
